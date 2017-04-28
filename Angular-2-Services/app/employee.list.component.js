@@ -17,14 +17,17 @@ var EmployeeListComponent = (function () {
         this.employees = [];
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
-        this.employees = this._employeeService.getEmployees();
+        var _this = this;
+        this._employeeService.getEmployees()
+            .subscribe(function (resEmployeeData) { return _this.employees = resEmployeeData; }, function (resEmployeeError) { return _this.errMsg = resEmployeeError; });
+        //this.employees = this._employeeService.getEmployees();
     };
     return EmployeeListComponent;
 }());
 EmployeeListComponent = __decorate([
     core_1.Component({
         selector: 'employee-list',
-        template: "<h2>Employee List</h2>\n\t\t\t   <ul *ngFor=\"let employee of employees\">\n\t\t\t\t\t<li>{{employee.name}}</li>\n\t\t\t   </ul>"
+        template: "<h2>Employee List</h2>\n\t\t\t   <h3>{{errMsg}}</h3>\n\t\t\t   <ul *ngFor=\"let employee of employees\">\n\t\t\t\t\t<li>{{employee.name}} : {{employee.gender}}</li>\n\t\t\t   </ul>"
     }),
     __metadata("design:paramtypes", [employee_service_1.EmployeeService])
 ], EmployeeListComponent);
