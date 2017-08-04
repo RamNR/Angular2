@@ -18,7 +18,7 @@ var AppComponent = (function () {
         this.ctwo = true;
         this.style = 'italic';
         this.size = '30px';
-        this.name = "PavinNarayanan NR";
+        this.name = "Test Name";
     }
     AppComponent.prototype.onClick = function (searchStr) {
         console.log(searchStr);

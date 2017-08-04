@@ -7,6 +7,7 @@ Search String is : {{searchStr.value}}<br>
 	<th>Structural Directives Examples</th>
 	<th>Attribute Directives</th>
 	<th>Pipe Operators</th>
+	<th>Two Way Data Binding</th>
 </tr>	
 <tr>
 	<td>
@@ -36,6 +37,11 @@ Search String is : {{searchStr.value}}<br>
 		LowerCase : <h3>{{name | lowercase}}</h3>
 		Slice     : <h3>{{name | slice:'1':'2'}}</h3>
 		
+	</td>
+	<td>
+		<input type="text" [(ngModel)]="fname">
+		<input type="text" [(ngModel)]="lname"><br>
+		Full Name : {{fname}} {{lname}}
 	</td>
 </tr>
 </table>

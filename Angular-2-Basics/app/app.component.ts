@@ -16,6 +16,8 @@ export class AppComponent {
 	public style = 'italic';
 	public size = '30px';
 	public name = "Test Name";
+	public fname;
+	public lname;
 	onClick(searchStr){
 		console.log(searchStr);
 	}
